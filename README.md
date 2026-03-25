@@ -11,8 +11,8 @@ A Python command-line application for managing classroom scheduling with room cr
 
 ## Installation
 ```bash
-git clone https://github.com/brokenCart/classroom-booking-system-cli.git
-cd classroom-booking-system-cli
+git clone https://github.com/brokenCart/classroom_booking_system_cli.git
+cd classroom_booking_system_cli
 ```
 
 ## Run
