@@ -1,10 +1,10 @@
-# classroom_booking_system_cli
+# classroom-booking-system-cli
 CLI for booking classrooms depending upon availability.
 
 ## Installation
 ```bash
-git clone https://github.com/brokenCart/classroom_booking_system_cli.git
-cd classroom_booking_system_cli
+git clone https://github.com/brokenCart/classroom-booking-system-cli.git
+cd classroom-booking-system-cli
 ```
 
 ## Run
