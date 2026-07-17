@@ -124,20 +124,6 @@ flowchart TD
     BS <--> CSV[("bookings_final_state.csv<br/>(CSV Data Store)")]
 ```
 
-```
-┌──────────┐       ┌──────────────┐       ┌──────────┐
-│ main.py  │──────▶│ BookingSystem│──────▶│   Room   │
-│  (CLI)   │       │  (Manager)   │       │ (Model)  │
-└──────────┘       └──────┬───────┘       └──────────┘
-                          │
-            ┌─────────────┴─────────────┐
-            │                           │
-     ┌──────▼───────┐           ┌───────▼──────────────┐
-     │  errors.py   │           │ bookings_final_state │
-     │ (Exceptions) │           │        (.csv)        │
-     └──────────────┘           └──────────────────────┘
-```
-
 - **`main.py`** acts as the controller — it captures user input and delegates to `BookingSystem`.
 - **`BookingSystem`** manages a dictionary of `Room` objects and handles all business logic (creation, booking, filtering, persistence).
 - **`Room`** is a simple data model holding the room number, building, capacity, and a boolean array of 24 hourly booking slots.
