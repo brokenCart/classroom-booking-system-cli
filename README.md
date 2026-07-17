@@ -116,21 +116,26 @@ classroom-booking-system-cli/
 
 ## 📐 Architecture
 
+```mermaid
+flowchart TD
+    CLI["main.py<br/>(CLI Controller)"] --> BS["BookingSystem<br/>(Manager)"]
+    BS --> Room["Room<br/>(Data Model)"]
+    BS --> ERR["errors.py<br/>(Exceptions)"]
+    BS <--> CSV[("bookings_final_state.csv<br/>(CSV Data Store)")]
 ```
-┌──────────┐       ┌──────────────┐       ┌──────┐
-│  main.py │──────▶│ BookingSystem │──────▶│ Room │
-│  (CLI)   │       │  (Manager)   │       │(Model)│
-└──────────┘       └──────┬───────┘       └──────┘
+
+```
+┌──────────┐       ┌──────────────┐       ┌──────────┐
+│ main.py  │──────▶│ BookingSystem│──────▶│   Room   │
+│  (CLI)   │       │  (Manager)   │       │ (Model)  │
+└──────────┘       └──────┬───────┘       └──────────┘
                           │
-                   ┌──────▼───────┐
-                   │  errors.py   │
-                   │ (Exceptions) │
-                   └──────────────┘
-                          │
-                   ┌──────▼───────────────┐
-                   │ bookings_final_state  │
-                   │       (.csv)          │
-                   └──────────────────────-┘
+            ┌─────────────┴─────────────┐
+            │                           │
+     ┌──────▼───────┐           ┌───────▼──────────────┐
+     │  errors.py   │           │ bookings_final_state │
+     │ (Exceptions) │           │        (.csv)        │
+     └──────────────┘           └──────────────────────┘
 ```
 
 - **`main.py`** acts as the controller — it captures user input and delegates to `BookingSystem`.
